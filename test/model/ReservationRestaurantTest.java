@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import reservations.Reservation;
+import reservations.ReservationRestaurant;
+
 class ReservationRestaurantTest {
 	static ReservationRestaurant reservation;
 	static final int NUM_TABLE = 2;

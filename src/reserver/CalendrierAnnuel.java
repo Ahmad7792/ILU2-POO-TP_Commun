@@ -6,7 +6,7 @@ public class CalendrierAnnuel {
 		private String nom;
 		private Boolean[] jours;
 		public Mois(String nom, int nbJours) throws IllegalStateException {
-			this.nom = nom;
+			this.setNom(nom);
 			this.jours = new Boolean[nbJours];
 			for (int i=0;i<nbJours;i++) {
 				jours[i] = false;
@@ -20,6 +20,12 @@ public class CalendrierAnnuel {
 				throw new IllegalStateException();
 			}
 			this.jours[jour] = true;
+		}
+		public String getNom() {
+			return nom;
+		}
+		public void setNom(String nom) {
+			this.nom = nom;
 		}
 	}
 	public CalendrierAnnuel() {

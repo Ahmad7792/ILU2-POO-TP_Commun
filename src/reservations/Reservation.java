@@ -1,5 +1,7 @@
 package reservations;
 
-public class Reservation {
-
+public abstract class Reservation {
+	public int jour;
+	public int mois;
+	public abstract String toString();
 }
