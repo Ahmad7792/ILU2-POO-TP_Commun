@@ -2,9 +2,10 @@ package EntiteReservable;
 
 import formulaire.Formulaire;
 import formulaire.FormulaireRestaurant;
+import reservations.Reservation;
 import reserver.CalendrierAnnuel;
 
-public abstract class EntiteReservable {
+public abstract class EntiteReservable <T extends Formulaire, R extends Reservation>{
 	private CalendrierAnnuel calendrier;
 	private int numero;
 	public CalendrierAnnuel getCalendrier() {
@@ -20,11 +21,11 @@ public abstract class EntiteReservable {
 		this.numero = numero;
 	}
 	
-	public Boolean estLibre(Formulaire formulaire) {
+	public Boolean estLibre(T formulaire) {
 		return calendrier.estLibre(formulaire.getJour(), formulaire.getMois());
 		//
 	}
 	
-	public abstract Boolean compatible(Formulaire formulaire);
-	public abstract void reserver(Formulaire formulaire);
+	public abstract Boolean compatible(T formulaire);
+	public abstract R reserver(T formulaire);
 }
